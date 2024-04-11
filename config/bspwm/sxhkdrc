@@ -42,10 +42,6 @@ alt + F1
 alt + @space
 	RiceSelector
 
-# jgmenu
-~button3
-  xqp 0 $(xdo id -N Bspwm -n root) && jgmenu --csv-file=~/.config/bspwm/scripts/menu.txt --config-file=~/.config/bspwm/jgmenurc
-
 # Scratchpad
 super + alt + o
 	tdrop -a -w 70% -h 35% -y 0 -x 15%  --class scratch alacritty --class=scratch
@@ -81,10 +77,6 @@ alt + Print
 # Screenshot active window
 shift + Print
 	ScreenShoTer --active
-
-# Manage brightness
-XF86MonBrightness{Up,Down}
-    sh Brightness {up,down}
 
 # Volume control
 XF86Audio{RaiseVolume,LowerVolume,Mute}

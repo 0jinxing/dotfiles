@@ -397,7 +397,6 @@ _comps=(
 'gdf' '_df'
 'gdiff' '_diff'
 'gdu' '_du'
-'geany' '_geany'
 'gegrep' '_grep'
 'gem' '_gem'
 'genisoimage' '_genisoimage'
@@ -1801,7 +1800,7 @@ autoload -Uz _alacritty _bootctl _bspc _busctl _checkupdates \
             _xxd _xz _yafc _yodl _yp \
             _zcat _zdump _zfs _zfs_dataset _zfs_pool \
             _zip _zsh _acroread _code _dcop \
-            _eog _evince _geany _gnome-gv _gqview \
+            _eog _evince _gnome-gv _gqview \
             _gv _kdeconnect _kfmclient _matlab _mozilla \
             _mplayer _mupdf _nautilus _nedit _netscape \
             _okular _pdftk _qiv _rdesktop _setxkbmap \
