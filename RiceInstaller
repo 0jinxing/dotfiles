@@ -80,7 +80,7 @@ logo "Installing needed packages.."
 dependencias=(alacritty base-devel brightnessctl bspwm dunst feh geany git imagemagick jq \
 			        jgmenu libwebp lsd maim mpc mpd neovim ncmpcpp npm pamixer pacman-contrib \
 			        papirus-icon-theme physlock picom playerctl polybar polkit-gnome python-gobject ranger \
-			        rofi rustup sxhkd ttf-inconsolata ttf-jetbrains-mono ttf-jetbrains-mono-nerd \
+			        rofi sxhkd ttf-inconsolata ttf-jetbrains-mono ttf-jetbrains-mono-nerd \
 			        ttf-joypixels ttf-terminus-nerd ueberzug webp-pixbuf-loader xclip xdg-user-dirs \
 			        xdo xdotool xorg-xdpyinfo xorg-xkill xorg-xprop xorg-xrandr xorg-xsetroot \
 			        xorg-xwininfo zsh zsh-autosuggestions zsh-history-substring-search zsh-syntax-highlighting)
@@ -293,6 +293,7 @@ else
         git clone https://aur.archlinux.org/paru-bin.git
         cd paru-bin || exit
         makepkg -si --noconfirm
+        rm -rf {paru-bin}
         } || {
         printf "\n%s%sFailed to install Paru. You may need to install it manually%s\n" "${BLD}" "${CRE}" "${CNC}"
     }
@@ -320,14 +321,8 @@ if command -v eww >/dev/null 2>&1; then
 else
     printf "\n%s%sInstalling Eww, this could take 10 mins or more.%s\n" "${BLD}" "${CBL}" "${CNC}"
     {
-        sudo pacman -S rustup --noconfirm
+        paru -S eww --skipreview --noconfirm
         cd "$HOME" || exit
-        git clone https://github.com/elkowar/eww
-        cd eww || exit
-        cargo build --release --no-default-features --features x11
-        sudo install -m 755 "$HOME/eww/target/release/eww" -t /usr/bin/
-        cd "$HOME" || exit
-        rm -rf {paru-bin,.cargo,.rustup,eww}
         } || {
         printf "\n%s%sFailed to install Eww. You may need to install it manually%s\n" "${BLD}" "${CRE}" "${CNC}"
     }
